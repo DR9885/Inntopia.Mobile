@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+</p>
+
+<ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Navigation</li>
+    <li>@Html.ActionLink("About", "About", "Home")</li>
+    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+</ul>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: "PUT",
+                dataType: "json",
+                url: "api/Selector/",
+                data: {
+                    value: "asd"
+                },
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    console.log(msg);
+                }
+            });
+
+            $.post('api/Selector/', { value: 'TST' }, function (msg) {
+                console.log(msg);
+            });
+        });
+    </script>
+}
