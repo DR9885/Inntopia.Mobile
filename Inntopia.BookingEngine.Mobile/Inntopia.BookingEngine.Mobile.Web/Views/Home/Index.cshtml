@@ -15,23 +15,75 @@
 
 @section scripts {
     <script type="text/javascript">
-        $(document).ready(function () {
+        
+
+        getMovie(2, function (movie) {
+            //$("#title").html(movie.Title);
+            //$("#director").html(movie.Director);
+        });
+
+        function getMovie(id, callback) {
             $.ajax({
-                type: "PUT",
-                dataType: "json",
-                url: "api/Selector/",
-                data: {
-                    value: "asd"
-                },
-                contentType: "application/json; charset=utf-8",
-                success: function (msg) {
-                    console.log(msg);
+                url: "/api/Movie",
+                data: { id: id },
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                statusCode: {
+                    200: function (movie) {
+                        callback(movie);
+                    },
+                    404: function () {
+                        alert("Not Found!");
+                    }
                 }
             });
-
-            $.post('api/Selector/', { value: 'TST' }, function (msg) {
-                console.log(msg);
+        }
+        
+        listMovies(function (movies) {
+            var strMovies="";
+            $.each(movies, function (index, movie) {
+                strMovies += "<div>" + movie.Title + "</div>";
             });
+            $("#movies").html(strMovies);
+ 
         });
+ 
+        function listMovies(callback) {
+            $.ajax({
+                url: "/api/Movie",
+                data: {},
+                type: "GET",
+                contentType: "application/json;charset=utf-8"
+            }).then(function(movies){
+                callback(movies);
+            });
+        }
+
+
+
+
+        var movieToCreate = {
+            title: "The Hobbit",
+            director: "Jackson"
+        };
+        createMovie(movieToCreate, function (newMovie) {
+            alert("New movie created with an Id of " + newMovie.Id);
+        });
+
+        function createMovie(movieToCreate, callback) {
+            $.ajax({
+                url: "/api/Movie",
+                data: JSON.stringify(movieToCreate),
+                type: "POST",
+//                dataType: "json",
+                contentType: "application/json;charset=utf-8",
+                statusCode: {
+                    201: function (newMovie) {
+                        callback(newMovie);
+                    }
+                }
+            });
+        }
+
     </script>
 }
