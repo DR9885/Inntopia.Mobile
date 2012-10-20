@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Web
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inntopia.Mobile.Web", "Inntopia.Mobile.Web\Inntopia.Mobile.Web.csproj", "{9C882D33-B122-4178-8C5D-FF8E9B129265}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inntopia.Mobile.Data", "Inntopia.Mobile.Data\Inntopia.Mobile.Data.csproj", "{DD117E9F-CCF8-44BC-8A19-7789F342ABCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inntopia.Mobile.Test", "Inntopia.Mobile.Test\Inntopia.Mobile.Test.csproj", "{6E790538-8CCB-481C-9E32-DD610F819097}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{9C882D33-B122-4178-8C5D-FF8E9B129265}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C882D33-B122-4178-8C5D-FF8E9B129265}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C882D33-B122-4178-8C5D-FF8E9B129265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD117E9F-CCF8-44BC-8A19-7789F342ABCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD117E9F-CCF8-44BC-8A19-7789F342ABCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD117E9F-CCF8-44BC-8A19-7789F342ABCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD117E9F-CCF8-44BC-8A19-7789F342ABCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E790538-8CCB-481C-9E32-DD610F819097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E790538-8CCB-481C-9E32-DD610F819097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E790538-8CCB-481C-9E32-DD610F819097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E790538-8CCB-481C-9E32-DD610F819097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

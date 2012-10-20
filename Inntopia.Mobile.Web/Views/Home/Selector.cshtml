@@ -1,0 +1,36 @@
+﻿@model Inntopia.Mobile.Web.Models.Selector
+
+@{
+    ViewBag.Title = "SUPPLIER NAME";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Search For:</li>
+    @foreach (var item in Model.SuperCategories)
+    {
+        <li>
+            @Html.ActionLink(item.Name, "About", "Home", new { 
+                @data_icon = "home", 
+                @data_iconpos = "left" } )
+             <span class="ui-li-count">12</span>
+        </li>
+    }
+</ul>
+
+
+<div data-role="footer" data-position="fixed" >		
+	<div data-role="navbar" data-iconpos="top">
+		<ul>
+			@foreach (var item in Model.SuperCategories) {
+               <li>
+                    @Html.ActionLink(item.ShortName, "About", "Home", new { 
+                        @data_icon = "home", 
+                        @data_iconpos = "left" } )
+                </li>
+            }
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
