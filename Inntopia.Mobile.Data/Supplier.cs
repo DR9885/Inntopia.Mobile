@@ -9,6 +9,9 @@ namespace Inntopia.Mobile.Data
 {
     public class Supplier
     {
+        [XmlAttribute("ID")]
+        public int ID { get; set; }
+
         [XmlAttribute("Name")]
         public string Name { get; set; }
 
@@ -27,11 +30,17 @@ namespace Inntopia.Mobile.Data
         [XmlAttribute("Directions")]
         public string Directions { get; set; }
 
-        [XmlAttribute("Webpage")]
-        public string Webpage { get; set; }
+        [XmlAttribute("Website")]
+        public string Website { get; set; }
 
         [XmlAttribute("Reservations")]
         public bool Reservations { get; set; }
+
+        [XmlAttribute("City")]
+        public string City { get; set; }
+
+        [XmlAttribute("Region")]
+        public string StateRegion { get; set; }
     }
 
 }
