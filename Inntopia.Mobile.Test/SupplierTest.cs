@@ -10,7 +10,7 @@ namespace Inntopia.Mobile.Test
     [TestClass]
     public class SupplierTest
     {
-        public readonly int SupplierID = 80002;
+        public readonly int SupplierID = 322;
         public SupplierDetails SupplierDetails { get; set; }
 
         [TestInitialize]
@@ -49,7 +49,13 @@ namespace Inntopia.Mobile.Test
                 Assert.IsNotNull(product.ProductId);
             }
 
-            int i = 0;
+ 
+            Assert.IsNotNull(SupplierDetails.Supplier, "Suppliers is null");
+            Assert.IsNotNull(SupplierDetails.Supplier.Policy, "Supplier policy is null");
+            foreach (var policy in SupplierDetails.Supplier.Policy)
+            {
+                Assert.IsNotNull(policy.ID, "Policy ID is null");
+            }
 //            Assert.IsNotNull(supplier.Directions);
 //            Assert.IsNotNull(supplier.Description);
 
