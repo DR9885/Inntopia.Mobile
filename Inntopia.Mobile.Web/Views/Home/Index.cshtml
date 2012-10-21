@@ -1,15 +1,16 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model Inntopia.Mobile.Web.Models.InntopiaStart
+
+@{
+    ViewBag.Title = "Inntopia Mobile";
 }
 
-<label for="arrival">Arrival:</label>
-<input id="arrival" type="date" data-role='datebox' />
-<label for="departure">Departure:</label>
-<input id="departure" type="date" data-role='datebox' />
-
 <ul data-role="listview" data-inset="true">
-    <li data-role="list-divider">Navigation</li>
-    <li>@Html.ActionLink("About", "About", "Home")</li>
-    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    <li data-role="list-divider" data-theme="b">Resellers</li>
+    @foreach (var reseller in Model.PreferedResellers)
+    {
+        <li>@Html.ActionLink(reseller.Name + " (" + reseller.ID + ")", "Supplier", "Home", 
+                new { id = reseller.ID },
+                new { } )</li>
+    }
 </ul>
 
