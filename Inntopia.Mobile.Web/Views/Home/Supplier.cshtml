@@ -1,9 +1,49 @@
 ﻿@model Inntopia.Mobile.Web.Models.SupplierDetails
 
 @{
-    ViewBag.Title = "Supplier";
+    ViewBag.Title = Model.Supplier.Name ;
+//    ViewBag.Homepage = @Request.Url;//Model.Supplier.Website;
 }
 
-<h2>Supplier</h2>
 
-<br />
+@Html.Raw(Model.Supplier.Description)
+
+
+
+
+@section Scripts {
+    <link href="~/Plugins/jQuery-Mobile-Icon-Pack/font-awesome/jqm-icon-pack-2.1.2-fa.css" rel="stylesheet" />
+    <link href="~/Plugins/PhotoSwipe/release/3.0.5.1/photoswipe.css" rel="stylesheet" />
+    <script src="~/Plugins/PhotoSwipe/release/3.0.5.1/lib/klass.min.js"></script>
+    <script src="~/Plugins/PhotoSwipe/release/3.0.5.1/code.photoswipe.jquery-3.0.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var myPhotoSwipe = $("#Gallery a").photoSwipe({ enableMouseWheel: false, enableKeyboard: false });
+        });
+    </script>
+}
+
+<ul id="Gallery" style="display:none;">
+    @if(Model.Products != null) {
+        foreach (var product in Model.Products)
+        {
+            foreach (var slide in product.Slides)//var slide in product.Slides)
+            {
+                <li><a href="@(slide.IsUrl? slide.Path : "https://www.inntopia.travel/Photos/" + slide.Path)" > Photos </a></li>  
+            }
+        }
+    }
+</ul>
+
+
+
+
+<div data-role="footer" data-position="fixed" >		
+	<div data-role="navbar" data-iconpos="top">
+		<ul>
+            <li><a href="javascript:void()" data-disabled="true" onclick="$('#Gallery a').click();" data-icon="film" data-iconpos="left">Photos</a></li>
+            <li><a href="#" data-icon="search" data-iconpos="left">Search</a></li>
+            <li><a href="#" data-icon="person" data-iconpos="left" disabled="disabled">Contact</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->

@@ -229,6 +229,9 @@
     <Content Include="Plugins\jquery-mobile-datebox\js\jqm-datebox.mode.flipbox.js" />
     <Content Include="Plugins\jquery-mobile-datebox\js\jqm-datebox.mode.slidebox.js" />
     <Content Include="Plugins\jquery-mobile-datebox\js\jquery.mobile.datebox.js" />
+    <Content Include="Plugins\PhotoSwipe\release\3.0.5.1\code.photoswipe-3.0.5.1.min.js" />
+    <Content Include="Plugins\PhotoSwipe\release\3.0.5.1\code.photoswipe.jquery-3.0.5.1.min.js" />
+    <Content Include="Plugins\PhotoSwipe\release\3.0.5.1\lib\klass.min.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />

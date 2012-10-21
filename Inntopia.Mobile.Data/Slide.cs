@@ -10,7 +10,7 @@ namespace Inntopia.Mobile.Data
     public class Slide
     {
         [XmlAttribute("IsUrl")]
-        public int IsUrl { get; set; }
+        public bool IsUrl { get; set; }
 
         [XmlAttribute("Sequence")]
         public int Sequence { get; set; }

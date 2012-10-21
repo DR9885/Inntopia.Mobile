@@ -15,11 +15,12 @@
             @if(item.ID == 1) {
                 <span class="ui-li-count"><img src="https://wwws.mint.com/sc/ph3035.33.4.2/images/icons/refresh-animated2.gif" height="16" width="15" /></span>
             } else {
-                <span class="ui-li-count">12</span>
+                <span class="ui-li-count">@item.Categories.Count()</span>
             }
             @Html.ActionLink(item.Name, "Selector", "Home", 
                 new {
-                    id = item.ID  
+                    id = Request.QueryString["ID"],
+                    superCategoryID = item.ID
                 },
                 new { 
                     @data_icon = "home", 
