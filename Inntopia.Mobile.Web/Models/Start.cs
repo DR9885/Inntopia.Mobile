@@ -13,6 +13,11 @@ namespace Inntopia.Mobile.Web.Models
         [XmlArray("PreferredResellers")]
         [XmlArrayItem("PreferredReseller")]
         public Supplier[] PreferedResellers { get; set; }
+
+        public InntopiaStart()
+        {
+//            PreferedResellers.OrderBy();
+        }
     }
 
     public class Start
