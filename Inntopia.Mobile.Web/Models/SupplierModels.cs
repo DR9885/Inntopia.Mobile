@@ -14,8 +14,26 @@ namespace Inntopia.Mobile.Web.Models
         [XmlElement("Supplier")]
         public Supplier Supplier { get; set; }
 
+        [XmlArray("Slides")]
+        [XmlArrayItem("Product")]
+        public Product[] Products { get; set; }
+
+        [XmlArray("SupplierAttributes")]
+        [XmlArrayItem("AttributeType")]
+        public AttributeType[] AttributeTypes { get; set; } 
+
         [XmlArray("CodeSets")]
         [XmlArrayItem("CodeSet")]
         public CodeSet[] CodeSets { get; set; }
+
+        [XmlArray("CardsAccepted")]
+        [XmlArrayItem("Card")]
+        public Card[] Cards { get; set; }
+
+        /*[XmlArray("Policies/Supplier")]
+        //[XmlArray("Supplier")]
+        [XmlArrayItem("Policy")]
+        public SupplierPolicy Policies { get; set;}
+         */
     }
 }

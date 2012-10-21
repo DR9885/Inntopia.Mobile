@@ -43,6 +43,13 @@ namespace Inntopia.Mobile.Test
             Assert.IsNotNull(supplier.PricingCurrency);
 
             Assert.IsNotNull(supplier.Website);
+            Assert.IsNotNull(SupplierDetails.Products);
+            foreach (var product in SupplierDetails.Products)
+            {
+                Assert.IsNotNull(product.ProductId);
+            }
+
+            int i = 0;
 //            Assert.IsNotNull(supplier.Directions);
 //            Assert.IsNotNull(supplier.Description);
 
