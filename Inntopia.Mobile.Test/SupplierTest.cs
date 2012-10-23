@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
 using System.Xml.Serialization;
 using System.IO;
-using Inntopia.Mobile.Web.Models;
+using Inntopia.Mobile.Data;
 
 namespace Inntopia.Mobile.Test
 {
@@ -33,7 +33,7 @@ namespace Inntopia.Mobile.Test
         {
             Assert.IsNotNull(SupplierDetails);
             Assert.IsNotNull(SupplierDetails.CodeSets);
-            Assert.IsNotNull(SupplierDetails.Supplier);
+            Assert.IsNotNull(SupplierDetails.Supplier, "Suppliers is null");
 
             var supplier = SupplierDetails.Supplier;
             Assert.IsNotNull(supplier.Name);
@@ -44,18 +44,13 @@ namespace Inntopia.Mobile.Test
 
             Assert.IsNotNull(supplier.Website);
             Assert.IsNotNull(SupplierDetails.Products);
-            foreach (var product in SupplierDetails.Products)
-            {
-                Assert.IsNotNull(product.ProductId);
-            }
 
- 
-            Assert.IsNotNull(SupplierDetails.Supplier, "Suppliers is null");
-            Assert.IsNotNull(SupplierDetails.Supplier.Policy, "Supplier policy is null");
-            foreach (var policy in SupplierDetails.Supplier.Policy)
-            {
-                Assert.IsNotNull(policy.ID, "Policy ID is null");
-            }
+
+            //Assert.IsNotNull(SupplierDetails.Supplier.Policy, "Supplier policy is null");
+            //foreach (var policy in SupplierDetails.Supplier.Policy)
+            //{
+            //    Assert.IsNotNull(policy.ID, "Policy ID is null");
+            //}
 //            Assert.IsNotNull(supplier.Directions);
 //            Assert.IsNotNull(supplier.Description);
 

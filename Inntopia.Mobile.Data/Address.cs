@@ -9,19 +9,22 @@ namespace Inntopia.Mobile.Data
 {
     public class Address
     {
-        [XmlAttribute("Type")]
-        public int Type { get; set; }
+        [XmlAttribute] public int Type { get; set; }
 
-        [XmlAttribute("CountryCode")]
-        public string CountryCode { get; set; }
+        #region Street
 
-        [XmlAttribute("Region")]
-        public string Region { get; set; }
+        [XmlAttribute("StreetAddress")] public string StreetAddress { get; set; }
+        [XmlAttribute("Address")] public string Location { get; set; }
+        [XmlAttribute] public string Street { get { return Location?? StreetAddress; } }
 
-        [XmlAttribute("PostalCode")]
-        public int PostalCode { get; set; }
+        #endregion
 
-        [XmlAttribute("StreetAddress")]
-        public string Street { get; set; }
+        [XmlAttribute] public string City { get; set; }
+        [XmlAttribute("Region")] public string State { get; set; }
+        [XmlAttribute("PostalCode")] public int ZipCode { get; set; }
+        [XmlAttribute] public string CountryCode { get; set; }
+        [XmlAttribute("Country")] public string Country2 { get; set; }
+        [XmlIgnore] public string Country { get { return CountryCode?? Country2; } }
+
     }
 }

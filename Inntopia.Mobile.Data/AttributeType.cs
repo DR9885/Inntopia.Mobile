@@ -9,18 +9,16 @@ namespace Inntopia.Mobile.Data
 {
     public class AttributeType  
     {
-        [XmlElement("Attribute")]
-        public Attribute[] Attributes { get; set; }
-
-        [XmlAttribute("DisplaySequence")]
-        public int DisplaySequence { get; set; }
+        [XmlAttribute("CodeType")]
+        public int CodeType { get; set; }
 
         [XmlAttribute("CodeTypeDesc")]
         public string CodeTypeDesc { get; set; }
 
-        [XmlAttribute("CodeType")]
-        public int CodeType { get; set; }
+        [XmlAttribute("DisplaySequence")]
+        public int DisplaySequence { get; set; }
 
-
+        [XmlElement("Attribute")]
+        public Attribute[] Attributes { get; set; }
     }
 }

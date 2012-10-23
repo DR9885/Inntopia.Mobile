@@ -9,38 +9,55 @@ namespace Inntopia.Mobile.Data
 {
     public class Supplier
     {
-        [XmlAttribute("ID")]
-        public int ID { get; set; }
+        // Base
+        [XmlAttribute] public int ID { get; set; }
+        [XmlAttribute] public string Name { get; set; }
+        [XmlAttribute] public string Description { get; set; }
 
-        [XmlAttribute("Name")]
-        public string Name { get; set; }
+        // Category
+        [XmlAttribute] public int CategoryID { get; set; }
+        [XmlAttribute] public string CategoryName { get; set; }
 
-        [XmlAttribute("Description")]
-        public string Description { get; set; }
+        [XmlAttribute] public bool Reservations { get; set; }
+        [XmlAttribute] public string PricingCurrency { get; set; }
 
-        [XmlAttribute("CategoryName")]
-        public string CategoryName { get; set; }
+        #region Location
 
-        [XmlAttribute("CategoryID")]
-        public int CategoryID { get; set; }
+        // Search.aspx
+        [XmlAttribute] public string City { set { RequireAddress(); Address.City = value; } }
+        [XmlAttribute] public string Region { set { RequireAddress(); Address.State = value; } }
+        [XmlAttribute("Address")] public string Street { set { RequireAddress(); Address.StreetAddress = value; } }
+        public void RequireAddress() { if (Address == null) Address = new Address(); }
 
-        [XmlAttribute("PricingCurrency")]
-        public string PricingCurrency { get; set; }
+        // Selector.aspx
+        [XmlElement] public Address Address { get; set; }
+        [XmlAttribute] public string Directions { get; set; }
 
-        [XmlAttribute("Directions")]
-        public string Directions { get; set; }
+        #endregion
 
-        [XmlAttribute("Website")]
-        public string Website { get; set; }
+        #region Contact Info
 
-        [XmlAttribute("Reservations")]
-        public bool Reservations { get; set; }
+        [XmlElement] public Phone Phone { get; set; }
+        [XmlElement] public Email Email { get; set; }
 
-        [XmlAttribute("City")]
-        public string City { get; set; }
+        #endregion
 
-        [XmlAttribute("Region")]
-        public string StateRegion { get; set; }
+        [XmlArray("Slides")]
+        [XmlArrayItem("Product")]
+        public Product[] SlideProducts { set { Products = value; } }
+        [XmlElement("Product")]
+        public Product[] Products { get; set; }
+
+        [XmlArray("SearchAttributes")]
+        [XmlArrayItem("AttributeType")]
+        public AttributeType[] AttributeTypes { get; set; }
+
+        [XmlArray("Attributes")]
+        [XmlArrayItem("Attribute")]
+        public AvailableAttribute[] AvailableAttributes { get; set; }
+
+        [XmlAttribute] public string Website { get; set; }
+        
     }
 
 }

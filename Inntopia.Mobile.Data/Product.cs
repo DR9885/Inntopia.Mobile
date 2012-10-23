@@ -9,14 +9,16 @@ namespace Inntopia.Mobile.Data
 {
     public class Product
     {
-        [XmlElement("Slide", typeof(Slide))]
-        public Slide[] Slides { get; set; }
+        [XmlAttribute] public int Id { get; set; }
+        [XmlAttribute] public string Name { get; set; }
+        [XmlAttribute] public string Description { get; set; }
 
-        [XmlAttribute("ProductId")]
-        public int ProductId { get; set; }
+        [XmlAttribute] public float TotalPrice { get; set; }
+        [XmlAttribute] public string Currency { get; set; }
 
-        [XmlAttribute("ProductName")]
-        public string ProductName { get; set; }
 
+        [XmlElement("ProductImage")] public Image[] ProductImages { get; set; }
+        [XmlElement("Slide")] public Image[] Slides { get; set; }
+        [XmlIgnore] public Image[] Images { get { return ProductImages?? Slides; } }
     }
 }
