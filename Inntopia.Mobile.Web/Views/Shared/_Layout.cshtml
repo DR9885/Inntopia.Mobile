@@ -9,7 +9,7 @@
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
-        <div data-role="page" data-theme="b">
+        <div id="jqm-home" class="type-home" data-role="page" data-theme="b">
             <div data-role="header">
                 @if (IsSectionDefined("Header")) {
                     @RenderSection("Header")
@@ -25,9 +25,8 @@
             </div>
             <div data-role="content">
                 @RenderBody()
-            </div>
+            </div><!-- end content -->
         </div>
-
         @Scripts.Render("~/bundles/jquery", "~/bundles/jquerymobile")
         @RenderSection("scripts", required: false)
     </body>

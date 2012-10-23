@@ -1,12 +1,4 @@
 ﻿using Inntopia.Mobile.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
 using System.Xml.Serialization;
 
 namespace Inntopia.Mobile.Web.Models
@@ -18,8 +10,12 @@ namespace Inntopia.Mobile.Web.Models
         public DefaultValues DefaultValues { get; set; }
 
         [XmlArray("AvailableCategories")]
-        [XmlArrayItem("SuperCategory", typeof(SuperCategory))]
+        [XmlArrayItem("SuperCategory")]
         public SuperCategory[] SuperCategories { get; set; }
+
+        [XmlArray("AttributeType")]
+        [XmlArrayItem("Attribute")]
+        public Attribute[] Attributes { get; set; }
     }
 
     public class DefaultValues

@@ -1,15 +1,11 @@
-﻿@model Inntopia.Mobile.Web.Models.SupplierDetails
+﻿@model Inntopia.Mobile.Data.SupplierDetails
 
 @{
-    ViewBag.Title = Model.Supplier.Name ;
-//    ViewBag.Homepage = @Request.Url;//Model.Supplier.Website;
+    ViewBag.Title = Model.Supplier.Name;
 }
 
 
 @Html.Raw(Model.Supplier.Description)
-
-
-
 
 @section Scripts {
     <link href="~/Plugins/jQuery-Mobile-Icon-Pack/font-awesome/jqm-icon-pack-2.1.2-fa.css" rel="stylesheet" />
@@ -27,16 +23,15 @@
     @if(Model.Products != null) {
         foreach (var product in Model.Products)
         {
-            foreach (var slide in product.Slides)//var slide in product.Slides)
-            {
-                <li><a href="@(slide.IsUrl? slide.Path : "https://www.inntopia.travel/Photos/" + slide.Path)" > Photos </a></li>  
+            if(product.Images != null) {
+                foreach (var image in product.Images)
+                {
+                    <li><a href="@(image.IsAbsolute? image.URL : "https://www.inntopia.travel/Photos/" + image.URL)" > Photos </a></li>  
+                }
             }
         }
     }
 </ul>
-
-
-
 
 <div data-role="footer" data-position="fixed" >		
 	<div data-role="navbar" data-iconpos="top">
