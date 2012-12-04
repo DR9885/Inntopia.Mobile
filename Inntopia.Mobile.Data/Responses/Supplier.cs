@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 
 namespace Inntopia.Mobile.Data
 {
+    [XmlRoot("Supplier")]
     public class Supplier
     {
         // Base
@@ -58,23 +59,5 @@ namespace Inntopia.Mobile.Data
 
         [XmlAttribute] public string Website { get; set; }
         
-    }
-
-    public class Supplier2
-    {
-        public Supplier2()
-        {
-
-        }
-
-        public void LoadSupplierXML()
-        {
-
-        }
-
-        public void LoadSelectorXML()
-        {
-
-        }
     }
 }

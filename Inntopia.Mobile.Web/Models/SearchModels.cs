@@ -7,7 +7,8 @@ using System.Xml.Serialization;
 
 namespace Inntopia.Mobile.Web.Models
 {
-    public class SearchResults
+    [XmlRoot("SearchResults")]
+    public class SearchResponse
     {
 
         [XmlArray("Locations")]

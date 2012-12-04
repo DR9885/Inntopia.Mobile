@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace Inntopia.Mobile.Web.Models
 {
     [XmlRoot("Selector")]
-    public class Selector {
+    public class SelectorResponse {
 
         [XmlElement("DefaultValues")]
         public DefaultValues DefaultValues { get; set; }

@@ -1,0 +1,11 @@
+﻿@model Inntopia.Mobile.Web.Models.Gallery
+
+<ul class="gallery">
+    @foreach(Image iamge in Model.Images) {
+	    <li>
+            <a href="@iamge.URL">
+                <img src="@iamge.URL" alt="@iamge.Name" />
+            </a>
+	    </li>
+    }
+</ul>

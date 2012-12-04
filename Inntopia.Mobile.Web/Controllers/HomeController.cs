@@ -26,8 +26,7 @@ namespace Inntopia.Mobile.Web.Controllers
         {
             InntopiaClient client = new InntopiaClient();
 
-            var model = InntopiaClient.GetData<InntopiaStart>(
-                    InntopiaRequest.Start, new Dictionary<string, object> { 
+            var model = InntopiaClient.GetData<InntopiaResponse>(new Dictionary<string, object> { 
                         { "salesid", 80000 }, 
                         { "returnxml", 1 }
                     });
@@ -38,7 +37,7 @@ namespace Inntopia.Mobile.Web.Controllers
         [OutputCache(Duration = 86400, VaryByParam = "id")]
         public ActionResult Supplier(int id = 80000)
         {
-            var model = InntopiaClient.GetData<SupplierDetails>(InntopiaRequest.Supplier,
+            var model = InntopiaClient.GetData<SupplierResponse>(
                         new Dictionary<string, object> {
                             { "supplierid", id },
                             { "advancedsearch", 1 }, // more search data data
@@ -52,7 +51,7 @@ namespace Inntopia.Mobile.Web.Controllers
         [OutputCache(Duration = 86400, VaryByParam = "id")]
         public ActionResult Start(int id = 80000)
         {
-            var model = InntopiaClient.GetData<Selector>(InntopiaRequest.Selector,
+            var model = InntopiaClient.GetData<SelectorResponse>(
                         new Dictionary<string, object>{
                             { "salesid", id },
                             { "advancedsearch", 1 }, // more search data data
@@ -64,9 +63,9 @@ namespace Inntopia.Mobile.Web.Controllers
 
         [OutputCache(Duration = 86400,
             VaryByParam = "id;productSuperCategoryID;productCategoryID;arrival;departure")]
-        public ActionResult Search(int id, int productSuperCategoryID, string arrival, string departure, string sessionID = null)
+        public ActionResult Search(int id, int productSuperCategoryID, string arrival = null, string departure = null, string sessionID = null)
         {
-            var model = InntopiaClient.GetData<SearchResults>(InntopiaRequest.Search,
+            var model = InntopiaClient.GetData<SearchResponse>(
                    new Dictionary<string, object>{
                             { "salesid", id },
                             { "sessionid", new Guid() }, 

@@ -19,6 +19,9 @@ namespace Inntopia.Mobile.Data
 
         [XmlElement("ProductImage")] public Image[] ProductImages { get; set; }
         [XmlElement("Slide")] public Image[] Slides { get; set; }
-        [XmlIgnore] public Image[] Images { get { return ProductImages?? Slides; } }
+        [XmlIgnore] public Image[] Images { 
+            get { return ProductImages?? Slides; }
+            set { Slides = value; }
+        }
     }
 }

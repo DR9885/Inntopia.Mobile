@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Inntopia.Mobile.Data.Category>
+
+@{
+    ViewBag.Title = "CategoryNavbar";
+}
+
+<div data-role="navbar" data-iconpos="top">
+	<ul class="category list">
+		@foreach (Inntopia.Mobile.Data.Category item in Model)
+        {
+            <li id="@("SuperCategory" + item.ID)" >
+                @Html.ActionLink(item.ShortName, "Index", "Home" )
+            </li>
+        }
+	</ul>
+</div><!-- /navbar -->
