@@ -1,0 +1,17 @@
+
+[submodule "Inntopia.Mobile.Web/Plugins/PhotoSwipe"]
+path = Inntopia.Mobile.Web/Plugins/PhotoSwipe
+url = https://github.com/codecomputerlove/PhotoSwipe.git
+
+[submodule "Inntopia.Mobile.Web/Plugins/jQuery-Mobile-Icon-Pack"]
+path = Inntopia.Mobile.Web/Plugins/jQuery-Mobile-Icon-Pack
+url = https://github.com/commadelimited/jQuery-Mobile-Icon-Pack.git
+
+[submodule "Inntopia.Mobile.Web/Plugins/jquery-mobile-datebox"]
+path = Inntopia.Mobile.Web/Plugins/jquery-mobile-datebox
+url = https://github.com/jtsage/jquery-mobile-datebox.git
+
+[submodule "Inntopia.Mobile.Web/Plugins/jquery-mobile-960"]
+path = Inntopia.Mobile.Web/Plugins/jquery-mobile-960
+url = https://github.com/jeromeetienne/jquery-mobile-960
+
