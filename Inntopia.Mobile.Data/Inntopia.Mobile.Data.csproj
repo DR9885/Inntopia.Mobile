@@ -54,6 +54,7 @@
     <Compile Include="CodeSet.cs" />
     <Compile Include="ContactInfo.cs" />
     <Compile Include="Email.cs" />
+    <Compile Include="InntopiaClient.cs" />
     <Compile Include="Phone.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

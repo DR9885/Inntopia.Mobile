@@ -11,8 +11,8 @@ namespace Inntopia.Mobile.Data
     {
         [XmlAttribute] public string ID { get; set; }
 
-        [XmlAttribute] public int DisplaySeq { set { DisplaySequence = value; } }
-        [XmlAttribute] public int Sequence { set { DisplaySequence = value; }  }
+        [XmlAttribute("DisplaySeq")] public int DisplaySeq { set { DisplaySequence = value; } }
+        [XmlAttribute("Sequence")] public int Sequence { set { DisplaySequence = value; }  }
         [XmlIgnore] public int DisplaySequence { get; set; }
 
         [XmlAttribute] public int Height { get; set; }
@@ -24,4 +24,7 @@ namespace Inntopia.Mobile.Data
         [XmlAttribute] public string FileName { set { URL = value; } }
         [XmlIgnore] public string URL { get; set; }
     }
+
+
+
 }

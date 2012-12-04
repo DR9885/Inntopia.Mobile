@@ -128,12 +128,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\GalleryModels.cs" />
     <Compile Include="Models\SearchModels.cs" />
     <Compile Include="Models\SelectorModels.cs" />
     <Compile Include="Models\Start.cs" />
@@ -144,11 +144,17 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font\fontawesome-webfont.svg" />
     <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\ajax-loader.png" />
+    <Content Include="Content\images\icons-18-black-pack.png" />
     <Content Include="Content\images\icons-18-black.png" />
+    <Content Include="Content\images\icons-18-white-pack.png" />
     <Content Include="Content\images\icons-18-white.png" />
+    <Content Include="Content\images\icons-36-black-pack.png" />
     <Content Include="Content\images\icons-36-black.png" />
+    <Content Include="Content\images\icons-36-white-pack.png" />
     <Content Include="Content\images\icons-36-white.png" />
     <Content Include="Content\jqm-docs.css" />
+    <Content Include="Content\jqm-icon-pack-2.1.2-fa.css" />
     <Content Include="Content\jquery.mobile-1.2.0.css" />
     <Content Include="Content\jquery.mobile-1.2.0.min.css" />
     <Content Include="Content\jquery.mobile.structure-1.2.0.css" />
@@ -275,24 +281,22 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\ChangePassword.cshtml" />
-    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
-    <Content Include="Views\Account\Index.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Selector.cshtml" />
-    <Content Include="Views\Home\Start.cshtml.cshtml" />
+    <Content Include="Views\Home\Start.cshtml" />
     <Content Include="Views\Home\Supplier.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Shared\_P.cshtml" />
+    <Content Include="Views\Shared\_SuperCategoryListView.cshtml" />
+    <Content Include="Views\Shared\_SuperCategoryNavbar.cshtml" />
+    <Content Include="Views\Shared\_CategoryNavbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Partials\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -33,6 +33,7 @@ namespace Inntopia.Mobile.Web
 
             bundles.Add(new StyleBundle("~/Content/mobileCss").Include(
                 "~/Content/jquery.mobile*",
+                "~/Content/jqm-icon-pack-2.1.2-fa.css",
                 "~/Plugins/jquery-mobile-960/css/jquery-mobile-fluid960.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(

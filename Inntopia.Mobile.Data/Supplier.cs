@@ -60,4 +60,21 @@ namespace Inntopia.Mobile.Data
         
     }
 
+    public class Supplier2
+    {
+        public Supplier2()
+        {
+
+        }
+
+        public void LoadSupplierXML()
+        {
+
+        }
+
+        public void LoadSelectorXML()
+        {
+
+        }
+    }
 }
